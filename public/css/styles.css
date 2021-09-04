@@ -1,3 +1,32 @@
 table, th, td {
     border: 1px solid black;
 }
+
+.grey {
+    background-color: #D3D3D3;
+}
+
+#dark_grey {
+    background-color: grey;
+}
+
+head {
+    background: yellow;
+}
+
+body {
+    background: lightblue;
+    color:rgb(24, 1, 1);
+}
+
+.white {
+    background-color: white;
+}
+
+a {
+    color: purple;
+}
+
+h3 {
+    color:rgb(199, 16, 71);
+}
