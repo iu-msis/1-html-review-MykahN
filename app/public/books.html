@@ -47,7 +47,7 @@
     <br>
     <!--Books table container-->
     <div class="container">
-      <table>
+      <table id="books_table">
         <tr id="dark_grey">
           <th>Title</th>
           <th>Author(s)</th>
@@ -98,5 +98,12 @@
         </tr>
       </table>
     </div>
+    
+    <!--Tablesort scripts from http://tristen.ca/tablesort/demo/-->
+    <script src="js/tablesort.min.js"></script>
+    <script>
+      new Tablesort(document.getElementById('books_table'));
+    </script>
+
   </body>
 </html>
