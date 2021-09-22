@@ -49,10 +49,7 @@
         <li v-for="item in list">{{ item }}</li>
       </ul>
       <p>{{ message }}</p>
-      <p>{{ result.name }}</p>
-      <p>{{ result.dob.date }}</p>
-      <p>{{ prettyBirthday }}</p>
-      <p><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+      <p>Welcome new user, {{ result.name }}, who was born on {{ cleanBirthday }}! If you need to reach out, contact them at: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
     </div>
 
     <!--Link to Javascript scripts-->
