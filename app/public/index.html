@@ -49,7 +49,7 @@
       <p>Welcome new user, {{ result.name['title'] }} {{ result.name['first'] }} {{ result.name['last'] }} all the way from {{ result.location['city'] }}, {{ result.location['state'] }}!</p>
       <p>{{ result.name['first'] }} is {{ result.dob['age'] }} years old and was born on {{ cleanBirthday }}!</p>
       <p> If you need to reach out, please contact them at: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
-      <p> Click this icon to see what they look like! --> <img src="{{ result.picture['thumbnail'] }}"></img></p>
+      <p> Click this icon to see what they look like! --> <img src="{{ result.picture['thumbnail'] }}"><span> Image source: "{{ result.picture['thumbnail'] }}"></span</p>
     </div>
 
     <!--Link to Javascript scripts-->
