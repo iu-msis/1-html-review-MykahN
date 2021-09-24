@@ -42,14 +42,24 @@
       <p>I'm looking forward to updating and changing this page around as new projects and assignments are completed. Thanks for stopping by!</p>
     </div>
 
-    <!--Container for future projects-->
+    <!--Future projects will be below-->
+
+    <!--Container for outputting fetched results from RandomUser-->
     <div id="someApp" class="container">
       <h5><b>Random User Generated Info</b></h5>
       <p>{{ message }}</p>
+      <p><img v-bind:src="result.picture.medium "><a v-bind:href="result.picture.medium"></a></p>
       <p>Welcome new user, {{ result.name['title'] }} {{ result.name['first'] }} {{ result.name['last'] }} all the way from {{ result.location['city'] }}, {{ result.location['state'] }}!</p>
       <p>{{ result.name['first'] }} is {{ result.dob['age'] }} years old and was born on {{ cleanBirthday }}!</p>
-      <p> If you need to reach out, please contact them at: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
-      <p> Click this icon to see what they look like! --> <img src="{{ result.picture['thumbnail'] }}"><span> Image source: "{{ result.picture['thumbnail'] }}"></span</p>
+
+      <!--Contextualized message to resulting gender-->
+      <p v-if="result.gender === 'male'"> If you need to reach out, please contact him at: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+      <p v-else> If you need to reach out, please contact her at: <a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>      
+      
+      <!--Button to refresh fetched RandomUser data-->
+      <form v-on:submit.prevent="fetchUserData">
+        <button type="submit">Refresh</button>
+      </form>
     </div>
 
     <!--Link to Javascript scripts-->
