@@ -31,10 +31,28 @@ h3 {
     color:rgb(199, 16, 71);
 }
 
+.student {
+    margin: 10px 2px;
+    padding: 4px;
+    border: 1px solid gray;
+    background-color: antiquewhite;
+}
+
+.selected {
+    background-color: burlywood;
+}
+
+.userName {
+    font-weight:bold;
+}
+
+.studentName{
+    color:#999;
+}
 
 /**Tablesort CSS**/
 /**Reference: https://github.com/tristen/tablesort/blob/gh-pages/tablesort.css**/
-th[role=columnheader]:not(.no-sort) {
+/* th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
 }
 
@@ -66,5 +84,5 @@ th[aria-sort]:not(.no-sort):after {
 th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
-}
+} */
 /**Tablesort CSS**/
