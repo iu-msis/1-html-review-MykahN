@@ -35,61 +35,84 @@
     </nav>
     <br>
     
-    <!--Form Container-->
-    <div class="container">
-      <form>
-        <label>Title:</label> <input type="text" placeholder="Title"><br>
-        <label>Author(s):</label> <input type="text" placeholder="Author(s)"><br>
-        <label>Year Published:</label> <input type="date"><br>
-        <label>Publisher:</label> <input type="text" placeholder="Publisher"><br>
-        <label>Page Count:</label> <input type="number" min="1" step="1" placeholder="0"><br>
-        <label>MSRP:</label> $<input type="number" min="0.01" step="0.01" placeholder="0">
-    </form>
-    </div>
-    
-    <br>
-
     <!--Books table container-->
     <div id="booksApp" class="container">
       <div class="col col-8">
-        <table id="books_table" class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Year_Published</th>
-              <th>Publisher</th>
-              <th>Page Count</th>
-              <th>MSRP</th>
-            </tr>
-          </thead>
-            <tbody>
-                <tr v-for="book in books">
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.author }}</td>
-                    <td>{{ book.year_published }}</td>
-                    <td>{{ book.publisher }}</td>
-                    <td>{{ book.page_count }}</td>
-                    <td>{{ book.msrp }}</td>
-                </tr>
-            </tbody>
-        </table>
+      <table id="books_Table" class=" table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year Published</th>
+          <th>Publisher</th>
+          <th>Page Count</th>
+          <th>MSRP</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr v-for="book in books"> 
+          <td> {{ book.title}} </td>
+          <td> {{book.author}} </td>
+          <td> {{book.year_published}} </td>
+          <td> {{book.publisher}} </td>
+          <td> {{book.page_count}} </td>
+          <td> {{book.msrp}} </td>
+        </tr>
+        
+      </tbody>
+      </table>
+      <br>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h4><u>Add New Book</u></h4>
+          <form v-on:submit.prevent="postNewBook">
+          <div class="mb-1">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" v-model="bookForm.title"
+             class="form-control" id="title">
+          </div>
+          <div class="mb-1">
+            <label for="author" class="form-label">Author:</label>
+            <input type="text" v-model="bookForm.author"
+             class="form-control" id="author">
+          </div>
+          <div class="mb-1">
+            <label for="yearpublished" class="form-label">Year Published:</label>
+            <input type="date" v-model="bookForm.year_published"
+             class="form-control" id="year_published">
+          </div>
+          <div class="mb-1">
+            <label for="publisher" class="form-label">Publisher:</label>
+            <input type="test" v-model="bookForm.publisher"
+             class="form-control" id="publisher">
+          </div>
+          <div class="mb-1">
+            <label for="pages" class="form-label">Pages:</label>
+            <input type="number" v-model="bookForm.page_count"
+             class="form-control" id="page_count" min="1" step="1" max="50000">
+          </div>
+          <div class="mb-1">
+            <label for="msrp" class="form-label">MSRP:</label>
+            <input type="number" v-model="bookForm.msrp"
+             class="form-control" id="msrp" min="0.01" step="0.01" max="2500">
+          </div>
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
-      
-    </div>
+      </div>         
 
     <!--Tablesort scripts from http://tristen.ca/tablesort/demo/-->
-    <script src="js/tablesort.min.js"></script>
+    <!-- <script src="js/tablesort.min.js"></script> -->
 
     <!--Additional sort types-->
     <!-- <script src="js/tablesort.date.js"></script>
     <script src="js/tablesort.num.js"></script> -->
 
-    <script>
+    <!-- <script>
       new Tablesort(document.getElementById('books_table'));
-    </script>
+    </script> -->
 
     <script src="js/books.js"></script>
-
   </body>
 </html>
