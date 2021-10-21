@@ -52,7 +52,7 @@ h3 {
 
 /**Tablesort CSS**/
 /**Reference: https://github.com/tristen/tablesort/blob/gh-pages/tablesort.css**/
-/* th[role=columnheader]:not(.no-sort) {
+th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
 }
 
@@ -84,5 +84,5 @@ th[aria-sort]:not(.no-sort):after {
 th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
-} */
+}
 /**Tablesort CSS**/
