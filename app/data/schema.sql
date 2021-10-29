@@ -34,23 +34,31 @@ INSERT INTO offer(id, studentId, companyName, salary, bonus, offerDate) VALUES
   (4, 3, 'Amazon', 122000, 11000, '2021-10-15')
 ;
 
+-- ALTER TABLE offer ADD COLUMN
+-- STATUS enum('Unanswered', 'Accepted', 'Declined', 'Negotiating')
+-- NOT NULL DEFAULT 'Unanswered';
+
+-- SELECT name, username, MAX(salary) AS maxSalary, COUNT(salary) AS offerCount
+-- FROM student LEFT OUTER JOIN offer ON student.id = offer.studentid
+-- GROUP BY username, name;
+
 DROP TABLE IF EXISTS books;
 CREATE TABLE books (
 	id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    title varchar(250) UNIQUE NOT NULL,
+    title varchar(250) NOT NULL,
     author varchar(100) NOT NULL,
-    year_published int() NOT NULL,
+    year_published YEAR(4) NOT NULL,
     publisher varchar(250) NOT NULL,
     page_count smallint NOT NULL,
-    msrp varchar(10) NOT NULL
+    msrp decimal(10, 2) NOT NULL
 );
 
 INSERT INTO books (id, title, author, year_published, publisher, page_count, msrp) VALUES 
-(1, 'A Storm of Swords', 'George R.R Martin', 2002, 'Random House Publishing Group', 1008, '$17.99'),
-(2, 'Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future', 'Ashlee Vance', 2017, 'HarperCollins Publishers', 416, '$17.99'),
-(3, 'The Martian', 'Andy Weir', 2014, 'Random House Publishing Group', 416, '$14.99'),
-(4, 'Pride and Prejudice', 'Jane Austen', 2002, 'Penguin Publishing Group', 480, '$9.00'),
-(5, 'The Great Gatsby', 'F. Scott Fitzgerald', 2004, 'Scribner', 208, '$13.99');
+(1, 'A Storm of Swords', 'George R.R Martin', '2002', 'Random House Publishing Group', 1008, 17.99),
+(2, 'Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future', 'Ashlee Vance', '2017', 'HarperCollins Publishers', 416, 17.99),
+(3, 'The Martian', 'Andy Weir', '2014', 'Random House Publishing Group', 416, 14.99),
+(4, 'Pride and Prejudice', 'Jane Austen', '2002', 'Penguin Publishing Group', 480, 9.00),
+(5, 'The Great Gatsby', 'F. Scott Fitzgerald', '2004', 'Scribner', 208, 13.99);
 
 -- COMMIT;
 
