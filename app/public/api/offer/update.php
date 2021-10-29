@@ -25,7 +25,7 @@ require("class/DbConnection.php");
 // This code doesn't do that, but should ...
 // For example, if the date is empty or bad, this insert fails.
 
-// Step 1: Get a datase connection from our helper class
+// Step 1: Get a database connection from our helper class
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
